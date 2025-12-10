@@ -38,7 +38,8 @@ This project demonstrates practical techniques in file integrity monitoring, mal
 python baseline.py
 ```
 
-*(Insert screenshot showing baseline CSV being generated and console output)*
+<img width="1708" height="75" alt="image" src="https://github.com/user-attachments/assets/c25ad895-21d3-4390-b3d4-8975552b8fe1" />
+
 
 ---
 
@@ -58,7 +59,8 @@ python baseline.py
 python detect_changes.py
 ```
 
-*(Insert screenshot showing detection of changed, deleted, and new files)*
+<img width="1819" height="106" alt="image" src="https://github.com/user-attachments/assets/049dca9b-2f24-4a76-8c9b-88bf6bf8e580" />
+
 
 ---
 
@@ -78,7 +80,11 @@ python detect_changes.py
 python hash_files.py
 ```
 
-*(Insert screenshot showing hashes being calculated and saved with timestamps)*
+<img width="1764" height="90" alt="image" src="https://github.com/user-attachments/assets/0f907e29-870b-4f07-b4fb-04412fc981c7" />
+
+<img width="854" height="181" alt="image" src="https://github.com/user-attachments/assets/4e469bed-b1b9-4ef3-8522-b943902c4559" />
+
+
 
 ---
 
@@ -98,7 +104,8 @@ python hash_files.py
 python network_propagation.py
 ```
 
-*(Insert screenshot showing network propagation steps and final infected nodes)*
+<img width="1807" height="258" alt="image" src="https://github.com/user-attachments/assets/599e8a4e-b841-439c-95fb-589df88075f4" />
+
 
 ---
 
@@ -118,7 +125,8 @@ python network_propagation.py
 python signature_scanner.py
 ```
 
-*(Insert screenshot showing scan results for clean and suspicious files)*
+<img width="1723" height="166" alt="image" src="https://github.com/user-attachments/assets/e8ba0195-8ea2-4189-b74a-e0febb1b27d6" />
+
 
 ---
 
@@ -136,7 +144,9 @@ python signature_scanner.py
 * Used by `detect_changes.py` to verify integrity.
 * Provides historical hash data for forensic analysis.
 
-*(Insert screenshots showing CSV content in a spreadsheet or console view)*
+<img width="666" height="205" alt="image" src="https://github.com/user-attachments/assets/db475293-b411-4ea7-9b98-1daa246c93e0" />
+
+<img width="856" height="121" alt="image" src="https://github.com/user-attachments/assets/627ec0de-aa7b-4a05-943f-f58abaf3ba40" />
 
 ---
 
@@ -148,7 +158,7 @@ python signature_scanner.py
 4. **Network simulation:** Run `network_propagation.py` to study propagation dynamics.
 5. **Malware scan:** Run `signature_scanner.py` to identify suspicious patterns.
 
-*(Insert sequential screenshots showing workflow from baseline creation to change detection and scanning)*
+
 
 ---
 
@@ -166,4 +176,3 @@ These scripts are essential for learning foundational concepts in system securit
 
 ---
 
-*(Add all relevant screenshots where indicated to complete the portfolio.)*
