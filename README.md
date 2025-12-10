@@ -1,59 +1,169 @@
-The purpose is to demonstrate competence in areas such as file integrity monitoring, malware detection, hashing, and network propagation simulation. Each section includes an explanation of the practical task, code snippets, and instructions for running the program.
+# File Integrity Monitoring and Network Security Portfolio
 
-1) baseline.py:
+This portfolio documents a set of Python scripts designed to implement file integrity monitoring, detect file changes, hash files with timestamps, simulate network propagation, and perform signature-based malware scanning.
 
-baseline.py script creates a trusted baseline of all files inside a directory by computing SHA-256 hashes. when Python baseline.py is run it will create baseline.csv which is opned in a spreadsheet shown here: 
+---
 
-<img width="681" height="183" alt="image" src="https://github.com/user-attachments/assets/a4d0b9a0-525d-4724-bc0a-a5bc836cd6b6" />
+## 1. Overview
 
-these trusted baselines are used  for integrity checks later.
+The project contains seven scripts and two CSV files to demonstrate various aspects of cybersecurity:
 
+1. **baseline.py** – Creates a trusted baseline of file hashes for a folder.
+2. **detect_changes.py** – Compares current files to the baseline and detects changes, deletions, and new files.
+3. **hash_files.py** – Hashes files with SHA256 and logs the timestamp for auditing.
+4. **network_propagation.py** – Simulates malware or infection propagation through a network.
+5. **signature_scanner.py** – Scans files for suspicious patterns using regular expressions.
+6. **baseline.csv** – Stores trusted file hashes.
+7. **hashes.csv** – Stores hashes with timestamps for reference.
 
-2) detect_changes.py: 
+This project demonstrates practical techniques in file integrity monitoring, malware detection, and network security simulation.
 
-Once baseline.py has created baseline.cv, detect_changes.py compares current file to the trusted baselines and checks:
---modified files
---deleted files
---newly added files
-checking for any tampering 
+---
 
-This is important to help uncover, malware injections, insider modification and web defacement
+## 2. File Explanations
 
+### 2.1 baseline.py
 
-Detecting modified files: 
-<img width="325" height="41" alt="image" src="https://github.com/user-attachments/assets/25a6666b-5566-4863-aa07-6c05db4425fd" />
+**Purpose:** Establish a trusted SHA256 hash baseline for files in a directory.
 
+**Key Features:**
 
-Detecting Deleted or new Files:
-<img width="272" height="49" alt="image" src="https://github.com/user-attachments/assets/ff6694e1-6f0c-4c00-bc13-ad4350e8dc29" />
+* Computes SHA256 hashes for all files in a folder.
+* Writes hashes to `baseline.csv`.
+* Useful for detecting unauthorized modifications later.
 
+**Usage:**
 
+```
+python baseline.py
+```
 
-3) Hash_files.py: 
+*(Insert screenshot showing baseline CSV being generated and console output)*
 
-Purpose of this file being run is also very imporant, because it hashes all of the files and logs them with a timestamp.
-As you can see from this screenshot below after the code had been implemented in terminal:
+---
 
-<img width="860" height="109" alt="image" src="https://github.com/user-attachments/assets/2bdd7bcf-8185-47bc-854e-aa97ed402f96" />
+### 2.2 detect_changes.py
 
-In cybersecurity relevance, this can be used for evidence logging, malware analysis and trackingg changes over time.
+**Purpose:** Detect modifications, deletions, and new files compared to the trusted baseline.
 
+**Key Features:**
 
-4) network_propagation.py:
+* Loads `baseline.csv` and compares with current files.
+* Reports modified, deleted, and new files.
+* Provides a clear file integrity report.
 
-network_propagation.py simulates how malware spreads across a network usng probability based infection demonstrating:
---lateral movement
---Worm propagation
---Risk of interconnected systems
+**Usage:**
 
+```
+python detect_changes.py
+```
 
+*(Insert screenshot showing detection of changed, deleted, and new files)*
 
-5) Signature_scanner.py:
+---
 
-signature_scanner.py scans files in a folder for suspicious patterns that commonly appear in malicious scripts shown below: 
+### 2.3 hash_files.py
 
-<img width="208" height="114" alt="image" src="https://github.com/user-attachments/assets/25b8fa0e-6883-4efd-a24d-c7c592008022" />
+**Purpose:** Generate SHA256 hashes for all files and log with timestamps.
 
-signature based scanning is used by classic antivirus engines, email gateways and static malware analysis tools
+**Key Features:**
 
-   
+* Records hash along with the timestamp of hashing.
+* Output saved to `hashes.csv` for audit purposes.
+* Supports large files with chunked reading.
+
+**Usage:**
+
+```
+python hash_files.py
+```
+
+*(Insert screenshot showing hashes being calculated and saved with timestamps)*
+
+---
+
+### 2.4 network_propagation.py
+
+**Purpose:** Simulate the spread of malware or infection across a network of computers.
+
+**Key Features:**
+
+* Models the network as a graph (nodes = computers, edges = connections).
+* Uses a probability factor to simulate infection spread.
+* Prints step-by-step propagation until no new infections occur.
+
+**Usage:**
+
+```
+python network_propagation.py
+```
+
+*(Insert screenshot showing network propagation steps and final infected nodes)*
+
+---
+
+### 2.5 signature_scanner.py
+
+**Purpose:** Scan files for suspicious code patterns.
+
+**Key Features:**
+
+* Uses regular expressions to detect potentially malicious functions (e.g., `eval()`, `exec()`).
+* Skips binary files and reads text safely.
+* Reports detected signatures per file.
+
+**Usage:**
+
+```
+python signature_scanner.py
+```
+
+*(Insert screenshot showing scan results for clean and suspicious files)*
+
+---
+
+### 2.6 baseline.csv & hashes.csv
+
+**Purpose:** Serve as reference files for file integrity monitoring.
+
+**Details:**
+
+* `baseline.csv`: Stores filenames and SHA256 hashes for trusted files.
+* `hashes.csv`: Stores filenames, SHA256 hashes, and timestamps for auditing.
+
+**Usage:**
+
+* Used by `detect_changes.py` to verify integrity.
+* Provides historical hash data for forensic analysis.
+
+*(Insert screenshots showing CSV content in a spreadsheet or console view)*
+
+---
+
+## 3. Workflow Demonstration
+
+1. **Create baseline:** Run `baseline.py` to generate trusted hashes.
+2. **Detect changes:** Use `detect_changes.py` after modifying or adding files.
+3. **Audit hashes:** Optionally run `hash_files.py` to maintain timestamped records.
+4. **Network simulation:** Run `network_propagation.py` to study propagation dynamics.
+5. **Malware scan:** Run `signature_scanner.py` to identify suspicious patterns.
+
+*(Insert sequential screenshots showing workflow from baseline creation to change detection and scanning)*
+
+---
+
+## 4. Conclusion
+
+This project provides hands-on experience in:
+
+* File integrity monitoring and baseline creation.
+* Detecting unauthorized changes to files.
+* Hashing with timestamps for auditing purposes.
+* Simulating network-based malware propagation.
+* Signature-based malware detection.
+
+These scripts are essential for learning foundational concepts in system security, monitoring, and network safety.
+
+---
+
+*(Add all relevant screenshots where indicated to complete the portfolio.)*
